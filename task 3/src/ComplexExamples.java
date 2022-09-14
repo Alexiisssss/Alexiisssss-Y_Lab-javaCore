@@ -45,21 +45,22 @@ public class ComplexExamples {
     System.out.println("**************************************************");
 
     // TODO TASK 3 - Fuzzy search
-     System.out.println(fuzzySearch("car", "ca6$$#_rtwheel"));
+    System.out.println(fuzzySearch("car", "ca6$$#_rtwheel"));
     System.out.println(fuzzySearch("cwhl", "cartwheel"));
     System.out.println(fuzzySearch("cwhee", "cartwheel"));
     System.out.println(fuzzySearch("cartwheel", "cartwheel"));
     System.out.println(fuzzySearch("cwheeel", "cartwheel"));
-     System.out.println(fuzzySearch("lw", "cartwheel"));
+    System.out.println(fuzzySearch("", "cartwheel"));
   }
 
 
   private static boolean fuzzySearch(String s1, String s2) {
-      String similar = "";
-      if ((s1 != null) & (s2 != null)) {
-        similar = Arrays.stream(s2.split("")) .filter(s1::contains) .collect(Collectors.joining());
-      }  return similar.equals(s1);
+    String similar = "";
+    if ((s1 != null) & (s2 != null)) {
+      similar = Arrays.stream(s2.split("")).filter(s1::contains).collect(Collectors.joining());
     }
+    return similar.equals(s1);
+  }
 
 
   static class Person {
